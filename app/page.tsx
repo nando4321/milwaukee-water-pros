@@ -118,7 +118,7 @@ export default function HomePage() {
             </div>
             <div className="relative min-h-80 overflow-hidden rounded-2xl border border-white/20">
               <Image
-                src="/images/process-pour.jpg"
+                src="/images/kitchen-tap.jpg"
                 alt="Pouring a glass of treated drinking water"
                 fill
                 className="object-cover"
@@ -204,7 +204,7 @@ export default function HomePage() {
           </div>
           <div className="relative min-h-96 overflow-hidden rounded-2xl border border-accent/50">
             <Image
-              src="/images/service-whole-home.jpg"
+              src="/images/equipment-whole-home.jpg"
               alt="Whole-home water treatment tank"
               fill
               className="object-cover object-center"

@@ -21,7 +21,7 @@ export const services: Service[] = [
     title: "Whole-Home Water Filtration Services",
     navTitle: "Whole-Home Water Filtration Services",
     heroTitle: "Whole-Home Water Filtration for Greater Milwaukee Homes",
-    image: "/images/service-whole-home.jpg",
+    image: "/images/equipment-whole-home.jpg",
     short:
       "Improve water quality throughout your entire home with filtration systems designed to reduce unwanted contaminants, odors, sediment, and common water concerns from every tap.",
     summary:
@@ -81,7 +81,7 @@ export const services: Service[] = [
     title: "Reverse Osmosis Drinking Water Systems",
     navTitle: "Reverse Osmosis Drinking Water Systems",
     heroTitle: "Reverse Osmosis Drinking Water Systems in Greater Milwaukee",
-    image: "/images/service-ro.jpg",
+    image: "/images/equipment-ro.jpg",
     short:
       "Enjoy cleaner, better-tasting drinking water with advanced reverse osmosis systems that provide high-quality water for drinking, cooking, coffee, ice, and everyday use.",
     summary:
@@ -141,7 +141,7 @@ export const services: Service[] = [
     title: "Well Water Treatment Systems",
     navTitle: "Well Water Treatment Systems",
     heroTitle: "Reliable Well Water Treatment for Milwaukee-Area Properties",
-    image: "/images/service-well.jpg",
+    image: "/images/equipment-well.jpg",
     short:
       "Treat private well water concerns such as iron, sulfur odors, sediment, staining, and mineral issues with customized solutions built around your property’s water source.",
     summary:
@@ -201,7 +201,7 @@ export const services: Service[] = [
     title: "Water Softener Systems",
     navTitle: "Water Softener Systems",
     heroTitle: "Water Softener Systems for Greater Milwaukee Homes",
-    image: "/images/service-softener.jpg",
+    image: "/images/equipment-softener.jpg",
     short:
       "Reduce hard water minerals that can cause buildup on fixtures, dry skin, dull laundry, and strain on plumbing and appliances with a professionally installed water softener system.",
     summary:
@@ -261,7 +261,7 @@ export const services: Service[] = [
     title: "Carbon Filtration Systems",
     navTitle: "Carbon Filtration Systems",
     heroTitle: "Carbon Filtration Systems for Better-Tasting Milwaukee Water",
-    image: "/images/service-carbon.jpg",
+    image: "/images/equipment-carbon.jpg",
     short:
       "Improve taste and odor by reducing chlorine, chloramine, and other common water concerns with carbon filtration systems designed for fresher, cleaner water.",
     summary:
@@ -321,7 +321,7 @@ export const services: Service[] = [
     title: "City Water Treatment Systems",
     navTitle: "City Water Treatment Systems",
     heroTitle: "City Water Treatment Systems for Milwaukee Municipal Supply",
-    image: "/images/service-city.jpg",
+    image: "/images/equipment-city.jpg",
     short:
       "Improve municipal water quality with treatment systems designed to reduce chlorine taste, odors, sediment, and other common city water concerns found in Greater Milwaukee homes.",
     summary:
