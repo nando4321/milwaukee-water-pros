@@ -7,7 +7,7 @@ import { SectionBadge } from "@/components/SectionBadge";
 import { areas, areaPath } from "@/lib/areas";
 
 export const metadata: Metadata = {
-  title: "Service Areas for Water Filtration in Greater Milwaukee",
+  title: "Service Areas for Water Filter Supplier in Wisconsin",
   description:
     "Milwaukee Water Pros serves Milwaukee County, Waukesha County, and Ozaukee County with water filtration, softening, reverse osmosis, and well treatment.",
   alternates: { canonical: "/service-areas" },
@@ -20,7 +20,7 @@ export default function ServiceAreasPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 text-center">
           <SectionBadge>Our Locations • Comprehensive Water Filtration Solutions</SectionBadge>
           <h1 className="mx-auto mt-5 max-w-4xl font-heading text-4xl font-extrabold text-navy sm:text-5xl">
-            Service Areas for Water Filtration in Greater Milwaukee
+            Service Areas for Water Filter Supplier in Wisconsin
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-muted">
             Our services include whole home water filtration, reverse osmosis drinking water

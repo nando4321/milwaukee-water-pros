@@ -47,7 +47,16 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <div className="mt-5 overflow-hidden rounded-xl border border-blue/30">
+          <div className="relative mt-5 overflow-hidden rounded-xl border border-blue/30">
+            <a
+              href={`https://maps.google.com/?q=${encodeURIComponent(site.address.full)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute left-2 top-2 z-10 inline-flex items-center gap-1 rounded-md bg-white px-2 py-1 text-xs font-semibold text-navy shadow"
+            >
+              Open in Maps
+              <span aria-hidden="true">↗</span>
+            </a>
             <iframe
               title={`${site.name} office map`}
               src={mapsSrc}
