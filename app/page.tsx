@@ -203,8 +203,8 @@ export default function HomePage() {
           </div>
           <div className="relative min-h-96 overflow-hidden rounded-2xl border border-accent/50">
             <Image
-              src="/images/service-ro.jpg"
-              alt="Whole-home treatment tank and reverse osmosis drinking water system"
+              src="/images/service-whole-home.jpg"
+              alt="Whole-home water treatment tank"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 45vw, 100vw"

@@ -48,6 +48,14 @@ export default function PrivacyPage() {
           Privacy questions can be sent with the website form or by mail to {site.address.full}.
           Phone: {site.phoneLabel}.
         </p>
+        <h2 className="mt-10 font-heading text-2xl font-extrabold text-navy">Photo credits</h2>
+        <p className="mt-3">
+          Location and equipment photographs include works from Unsplash and Wikimedia Commons.
+          Wikimedia images used under their published licenses: water treatment equipment and
+          Wisconsin location photos credited to their original authors on Wikimedia Commons
+          (including CC BY and CC BY-SA files). Unsplash photographs of Milwaukee and drinking
+          water are used under the Unsplash License.
+        </p>
         <p className="mt-8 text-sm">Last updated: September 14, 2026.</p>
       </article>
     </>

@@ -29,7 +29,7 @@ export function Header() {
       </div>
       <div className="border-b border-slate-100 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-          <Logo size={68} />
+          <Logo size={84} />
           <nav className="hidden flex-1 items-center justify-center gap-7 text-[15px] font-semibold text-navy lg:flex" aria-label="Main">
             <Link href="/#process" className="hover:text-accent">
               Process
