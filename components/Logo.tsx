@@ -3,43 +3,51 @@ import { site } from "@/lib/site";
 
 type LogoProps = {
   className?: string;
-  compact?: boolean;
-  inverted?: boolean;
+  showWordmark?: boolean;
+  size?: number;
 };
 
-export function Logo({ className = "", compact = false, inverted = false }: LogoProps) {
-  const word = inverted ? "text-white" : "text-navy";
-  const sub = inverted ? "text-white/80" : "text-blue";
-
+export function Mark({ size = 72 }: { size?: number }) {
   return (
-    <Link
-      href="/"
-      className={`flex items-center gap-3 no-underline ${className}`}
-      aria-label={`${site.name} home`}
+    <svg
+      viewBox="0 0 120 120"
+      width={size}
+      height={size}
+      aria-hidden="true"
+      className="shrink-0"
     >
-      <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy shadow-sm ring-2 ring-accent">
-        <svg
-          viewBox="0 0 48 48"
-          className="h-8 w-8"
-          aria-hidden="true"
-        >
-          <path
-            d="M24 8c.6 0 8 9.2 8 16.2C32 30.4 28.4 35 24 35s-8-4.6-8-10.8C16 17.2 23.4 8 24 8z"
-            fill="#F4FAFF"
-          />
-          <circle cx="24" cy="24.5" r="3.2" fill="#C2420D" />
-        </svg>
-      </span>
-      {!compact ? (
+      <circle cx="60" cy="60" r="58" fill="#111E46" />
+      <circle cx="60" cy="60" r="58" fill="none" stroke="#4379AA" strokeWidth="3" />
+      <path
+        d="M28 72c10-18 18-34 32-46 14 12 22 28 32 46"
+        fill="none"
+        stroke="#F4FAFF"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M34 78c9-14 16-26 26-36 10 10 17 22 26 36"
+        fill="none"
+        stroke="#C2420D"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <circle cx="60" cy="78" r="6" fill="#F4FAFF" />
+    </svg>
+  );
+}
+
+export function Logo({ className = "", showWordmark = false, size = 72 }: LogoProps) {
+  return (
+    <Link href="/" className={`flex items-center gap-3 no-underline ${className}`} aria-label={`${site.name} home`}>
+      <Mark size={size} />
+      {showWordmark ? (
         <span className="leading-tight">
-          <span className={`block font-heading text-[15px] font-extrabold tracking-tight ${word}`}>
+          <span className="block font-heading text-[15px] font-extrabold tracking-tight text-navy">
             Milwaukee
           </span>
-          <span className={`block font-heading text-[15px] font-extrabold tracking-tight ${word}`}>
+          <span className="block font-heading text-[15px] font-extrabold tracking-tight text-navy">
             Water Pros
-          </span>
-          <span className={`hidden text-[11px] font-semibold uppercase tracking-[0.14em] sm:block ${sub}`}>
-            Greater Milwaukee
           </span>
         </span>
       ) : null}

@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Milwaukee Water Pros">
-  <circle cx="32" cy="32" r="30" fill="#111E46"/>
-  <circle cx="32" cy="32" r="30" fill="none" stroke="#C2420D" stroke-width="4"/>
-  <path d="M32 12c.8 0 12 12.5 12 22.2C44 43.2 38.6 50 32 50s-12-6.8-12-15.8C20 24.5 31.2 12 32 12z" fill="#F4FAFF"/>
-  <circle cx="32" cy="34" r="5" fill="#C2420D"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Milwaukee Water Pros">
+  <circle cx="60" cy="60" r="58" fill="#111E46"/>
+  <circle cx="60" cy="60" r="58" fill="none" stroke="#4379AA" stroke-width="3"/>
+  <path d="M28 72c10-18 18-34 32-46 14 12 22 28 32 46" fill="none" stroke="#F4FAFF" stroke-width="5" stroke-linecap="round"/>
+  <path d="M34 78c9-14 16-26 26-36 10 10 17 22 26 36" fill="none" stroke="#C2420D" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="60" cy="78" r="6" fill="#F4FAFF"/>
 </svg>

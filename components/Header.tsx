@@ -21,18 +21,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40">
-      <div className="bg-navy text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2 text-sm sm:justify-end">
-          <p className="inline-flex items-center gap-2 rounded-md bg-accent px-3 py-1.5 font-semibold">
-            <PhoneIcon className="h-3.5 w-3.5" />
-            <span>{site.phoneLabel}</span>
-          </p>
-        </div>
+      <div className="bg-navy text-center text-sm text-white">
+        <p className="inline-flex items-center gap-2 px-4 py-2 font-medium">
+          <PhoneIcon className="h-3.5 w-3.5" />
+          {site.phoneLabel}
+        </p>
       </div>
-      <div className="border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div className="border-b border-slate-100 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-          <Logo />
-          <nav className="hidden items-center gap-6 text-[15px] font-semibold text-navy lg:flex" aria-label="Main">
+          <Logo size={68} />
+          <nav className="hidden flex-1 items-center justify-center gap-7 text-[15px] font-semibold text-navy lg:flex" aria-label="Main">
             <Link href="/#process" className="hover:text-accent">
               Process
             </Link>
@@ -41,7 +39,7 @@ export function Header() {
                 Services
                 <span className="text-[10px]">▼</span>
               </Link>
-              <div className="invisible absolute left-0 top-full z-50 min-w-72 translate-y-2 rounded-md border border-slate-200 bg-white py-2 opacity-0 shadow-lg transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="invisible absolute left-1/2 top-full z-50 min-w-72 -translate-x-1/2 translate-y-2 rounded-md border border-slate-200 bg-white py-2 opacity-0 shadow-lg transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 {services.map((service) => (
                   <Link
                     key={service.slug}
@@ -58,7 +56,7 @@ export function Header() {
                 Service Areas
                 <span className="text-[10px]">▼</span>
               </Link>
-              <div className="invisible absolute left-0 top-full z-50 min-w-56 translate-y-2 rounded-md border border-slate-200 bg-white py-2 opacity-0 shadow-lg transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="invisible absolute left-1/2 top-full z-50 min-w-56 -translate-x-1/2 translate-y-2 rounded-md border border-slate-200 bg-white py-2 opacity-0 shadow-lg transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                 {areas.map((area) => (
                   <Link
                     key={area.slug}
@@ -79,10 +77,10 @@ export function Header() {
           </nav>
           <Link
             href="/contact"
-            className="hidden items-center gap-2 rounded-md bg-accent px-4 py-2.5 text-sm font-bold text-white hover:bg-accent-dark lg:inline-flex"
+            className="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white hover:bg-accent-dark lg:inline-flex"
           >
-            <ArrowIcon className="h-3.5 w-3.5" />
             Get A Free Consultation
+            <ArrowIcon className="h-3.5 w-3.5" />
           </Link>
           <button
             type="button"
@@ -105,42 +103,24 @@ export function Header() {
               <Link href="/#process" onClick={close} className="py-2">
                 Process
               </Link>
-              <button
-                type="button"
-                className="flex items-center justify-between py-2 text-left"
-                onClick={() => setServicesOpen((value) => !value)}
-              >
+              <button type="button" className="flex items-center justify-between py-2 text-left" onClick={() => setServicesOpen((v) => !v)}>
                 Services
                 <span className="text-xs">{servicesOpen ? "−" : "+"}</span>
               </button>
               {servicesOpen
                 ? services.map((service) => (
-                    <Link
-                      key={service.slug}
-                      href={servicePath(service.slug)}
-                      onClick={close}
-                      className="pl-3 py-1 text-sm font-medium text-muted"
-                    >
+                    <Link key={service.slug} href={servicePath(service.slug)} onClick={close} className="pl-3 py-1 text-sm font-medium text-muted">
                       {service.navTitle}
                     </Link>
                   ))
                 : null}
-              <button
-                type="button"
-                className="flex items-center justify-between py-2 text-left"
-                onClick={() => setAreasOpen((value) => !value)}
-              >
+              <button type="button" className="flex items-center justify-between py-2 text-left" onClick={() => setAreasOpen((v) => !v)}>
                 Service Areas
                 <span className="text-xs">{areasOpen ? "−" : "+"}</span>
               </button>
               {areasOpen
                 ? areas.map((area) => (
-                    <Link
-                      key={area.slug}
-                      href={areaPath(area.slug)}
-                      onClick={close}
-                      className="pl-3 py-1 text-sm font-medium text-muted"
-                    >
+                    <Link key={area.slug} href={areaPath(area.slug)} onClick={close} className="pl-3 py-1 text-sm font-medium text-muted">
                       {area.navTitle}
                     </Link>
                   ))
@@ -151,11 +131,7 @@ export function Header() {
               <Link href="/#reviews" onClick={close} className="py-2">
                 Reviews
               </Link>
-              <Link
-                href="/contact"
-                onClick={close}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 py-3 text-white"
-              >
+              <Link href="/contact" onClick={close} className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-3 text-white">
                 Get A Free Consultation
               </Link>
             </nav>

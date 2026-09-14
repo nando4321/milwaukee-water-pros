@@ -3,25 +3,28 @@ import Link from "next/link";
 import { EstimateForm } from "@/components/EstimateForm";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink } from "@/components/Button";
-import { CheckIcon, DropIcon } from "@/components/Icons";
-import { ServiceArt, serviceArtKind } from "@/components/ServiceArt";
+import { ContactSection } from "@/components/ContactSection";
+import { SectionBadge } from "@/components/SectionBadge";
+import { CheckIcon, ClipboardIcon, DropIcon, WrenchIcon } from "@/components/Icons";
 import { site } from "@/lib/site";
 import { services, servicePath } from "@/lib/services";
-import { areas, areaPath } from "@/lib/areas";
 import { homeFaqs } from "@/lib/faqs";
 
 const process = [
   {
     title: "Water Quality Review",
     body: "We discuss your home’s water source, concerns, and goals to better understand what type of filtration or treatment solution may be right for you.",
+    icon: DropIcon,
   },
   {
     title: "Clear Recommendations",
     body: "Our team explains your options clearly, answers your questions, and recommends a system based on your water needs, home setup, and budget.",
+    icon: ClipboardIcon,
   },
   {
     title: "Professional Installation",
     body: "Once you choose the right solution, we install your system with care, test performance, and make sure you understand how your new water treatment system works.",
+    icon: WrenchIcon,
   },
 ];
 
@@ -56,266 +59,215 @@ export default function HomePage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-navy/80" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
+        <div className="absolute inset-0 bg-navy/75" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-16">
           <div>
-            <h1 className="font-heading text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.35rem]">
+            <h1 className="font-heading text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.4rem]">
               #1 Top-Rated Water Filtration &amp; Treatment Experts In Milwaukee
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-white/90 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-8 text-white/90 sm:text-[17px]">
               {site.name} helps homeowners enjoy cleaner, better-tasting water with professional
-              whole-home water filtration, reverse osmosis drinking water systems, water softeners,
+              whole home water filtration, reverse osmosis drinking water systems, water softeners,
               carbon filtration, well water treatment, and city water treatment solutions. Serving
-              Greater Milwaukee — Milwaukee County, Waukesha County, and Ozaukee County — we provide
-              honest recommendations and dependable installation designed around your home’s water
-              quality needs.
+              Greater Milwaukee, we provide honest recommendations and dependable installation
+              designed around your home’s water quality needs.
             </p>
-            <div className="mt-6 hidden gap-6 sm:flex">
-              <p className="inline-flex items-center gap-2 text-sm font-semibold">
-                <CheckIcon className="h-4 w-4 text-accent" />
+            <div className="mt-8 hidden flex-wrap gap-3 sm:flex">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/50 px-4 py-2 text-sm font-semibold">
+                <CheckIcon className="h-3.5 w-3.5 text-accent" />
                 Whole-Home Water Filtration
-              </p>
-              <p className="inline-flex items-center gap-2 text-sm font-semibold">
-                <CheckIcon className="h-4 w-4 text-accent" />
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/50 px-4 py-2 text-sm font-semibold">
+                <CheckIcon className="h-3.5 w-3.5 text-accent" />
                 Reverse Osmosis Drinking Water
-              </p>
+              </span>
             </div>
           </div>
-          <div className="rounded-2xl bg-white p-6 text-navy shadow-2xl sm:p-8">
-            <p className="text-center text-lg font-semibold">
-              Request A <span className="underline decoration-accent decoration-2">FREE</span>
-            </p>
-            <p className="mb-5 text-center font-heading text-2xl font-extrabold">Consultation Today!</p>
-            <EstimateForm compact />
+          <div className="rounded-2xl bg-navy p-6 shadow-2xl ring-1 ring-white/10 sm:p-8">
+            <EstimateForm variant="hero" />
           </div>
         </div>
       </section>
 
       <section id="process" className="bg-navy text-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-[1fr_0.9fr] lg:py-20">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-soft">
-              From Consultation to Completion in 3 Easy Steps
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold sm:text-4xl">
-              A Simple, No-Pressure Water Treatment Experience
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-8 text-white/80">
-              We make the process easy from start to finish. First, we review your water concerns,
-              then recommend the right solution, and finally install your system with care so you
-              can enjoy better water with confidence.
-            </p>
-            <div className="mt-8 space-y-6">
-              {process.map((step, index) => (
-                <div key={step.title} className="flex gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-blue text-blue">
-                    <DropIcon className="h-5 w-5" />
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
+          <h2 className="text-center font-heading text-3xl font-extrabold sm:text-5xl">
+            A Simple, No-Pressure Water Treatment Experience
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-8 text-white/80">
+            We make the process easy from start to finish. First, we review your water concerns,
+            then recommend the right solution, and finally install your system with care so you can
+            enjoy better water with confidence.
+          </p>
+          <div className="mt-12 grid items-stretch gap-8 lg:grid-cols-2">
+            <div className="space-y-4">
+              {process.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.title} className="flex gap-4 rounded-2xl border border-white/25 p-5">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-white/40">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-xl font-extrabold">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-7 text-white/75">{step.body}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-accent">
-                      Step {index + 1}
-                    </p>
-                    <h3 className="font-heading text-lg font-extrabold">{step.title}</h3>
-                    <p className="mt-1 text-sm leading-7 text-white/75">{step.body}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
-            <div className="mt-8">
-              <ButtonLink href="/contact">Get A Free Consultation</ButtonLink>
+            <div className="relative min-h-80 overflow-hidden rounded-2xl border border-white/20">
+              <Image
+                src="/images/process-pour.jpg"
+                alt="Pouring a glass of treated drinking water"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+              />
             </div>
-          </div>
-          <div className="relative min-h-72 overflow-hidden rounded-2xl shadow-lg">
-            <Image
-              src="/images/process-water.jpg"
-              alt="Clear water representing professional treatment results"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 40vw, 100vw"
-            />
           </div>
         </div>
       </section>
 
-      <section id="services" className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">
-            Our Services • Comprehensive Water Filtration Solutions
+      <section id="services" className="bg-ice">
+        <div className="mx-auto max-w-6xl px-4 py-16 text-center lg:py-20">
+          <SectionBadge>Our Services • Comprehensive Water Filtration Solutions</SectionBadge>
+          <h2 className="mx-auto mt-5 max-w-4xl font-heading text-3xl font-extrabold text-navy sm:text-5xl">
+            Complete Water Filtration &amp; Treatment Solutions for Milwaukee Homes
+          </h2>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-muted">
+            Our services include whole home water filtration, reverse osmosis drinking water
+            systems, water softeners, carbon filtration, well water treatment, and city water
+            treatment systems each designed to improve taste, reduce unwanted water concerns, and
+            support cleaner water throughout your home.
           </p>
-          <div className="mt-3 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-            <h2 className="font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-              Complete Water Filtration &amp; Treatment Solutions for Milwaukee Homes
-            </h2>
-            <p className="text-base leading-8 text-muted">
-              Our services include whole-home water filtration, reverse osmosis drinking water
-              systems, water softeners, carbon filtration, well water treatment, and city water
-              treatment systems — each designed to improve taste, reduce unwanted water concerns,
-              and support cleaner water throughout your home.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 text-left md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <article
                 key={service.slug}
-                className="group overflow-hidden rounded-2xl border border-blue/30 bg-ice shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="overflow-hidden rounded-2xl border border-blue/35 bg-white shadow-sm"
               >
-                <Link href={servicePath(service.slug)} className="block">
-                  <ServiceArt
-                    kind={serviceArtKind(service.slug)}
-                    label={service.title}
-                    className="h-48 w-full object-cover"
+                <Link href={servicePath(service.slug)} className="relative block h-52">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 30vw, 100vw"
                   />
                 </Link>
-                <div className="p-6">
+                <div className="border-t-4 border-navy p-5">
                   <h3 className="font-heading text-xl font-extrabold text-navy">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted">{service.short}</p>
-                  <ButtonLink
-                    href={servicePath(service.slug)}
-                    variant="ghost"
-                    className="mt-4 px-0"
-                  >
+                  <p className="mt-2 text-sm leading-7 text-muted">{service.short}</p>
+                  <ButtonLink href={servicePath(service.slug)} variant="ghost" className="mt-3 px-0">
                     Explore service
                   </ButtonLink>
                 </div>
               </article>
             ))}
           </div>
+          <div className="mt-12">
+            <ButtonLink href="/contact">Get A Free Consultation</ButtonLink>
+          </div>
         </div>
       </section>
 
       <section id="about" className="bg-navy text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
-          <div className="overflow-hidden rounded-2xl border border-blue/40">
-            <ServiceArt kind="city" label="Greater Milwaukee water treatment coverage" className="h-full w-full" />
-          </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-soft">About Us</p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold sm:text-4xl">
+            <SectionBadge onDark>About Milwaukee Water Pros • Your Trusted Water Filtration Partner</SectionBadge>
+            <h2 className="mt-5 font-heading text-3xl font-extrabold sm:text-5xl">
               Milwaukee’s Trusted Water Filtration Specialists
             </h2>
-            <p className="mt-4 text-base leading-8 text-white/80">
-              {site.name} proudly serves Greater Milwaukee with professional water filtration and
-              treatment solutions designed to improve the quality, taste, and performance of your
-              home’s water. We help homeowners choose the right system based on their water source,
-              concerns, and household needs — whether that means whole-home filtration, reverse
-              osmosis drinking water, water softening, carbon filtration, well water treatment, or
-              city water treatment.
+            <p className="mt-5 text-base leading-8 text-white/85">
+              {site.name} proudly serves{" "}
+              <span className="font-extrabold text-accent">Greater Milwaukee</span> with professional
+              water filtration and treatment solutions designed to improve the quality, taste, and
+              performance of your home’s water. We help homeowners choose the right system based on
+              their water source, concerns, and household needs, whether that means whole home
+              filtration, reverse osmosis drinking water, water softening, carbon filtration, well
+              water treatment, or city water treatment. Our goal is to provide honest guidance,
+              quality installation, and dependable solutions that help your family enjoy cleaner
+              water every day.
             </p>
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-6 space-y-3">
               {whyUs.map((item) => (
                 <li key={item.title} className="flex gap-3">
                   <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-accent" />
-                  <span>
-                    <strong className="font-heading text-white">{item.title}</strong>
-                    <span className="block text-sm leading-7 text-white/75">{item.body}</span>
+                  <span className="text-sm leading-7">
+                    <strong>{item.title}</strong> – {item.body}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {areas.map((area) => (
-                <Link
-                  key={area.slug}
-                  href={areaPath(area.slug)}
-                  className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy hover:bg-ice"
-                >
-                  {area.name}
-                </Link>
-              ))}
-            </div>
+          </div>
+          <div className="relative min-h-96 overflow-hidden rounded-2xl border border-accent/50">
+            <Image
+              src="/images/service-ro.jpg"
+              alt="Whole-home treatment tank and reverse osmosis drinking water system"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+            />
           </div>
         </div>
       </section>
 
       <section id="reviews" className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">
+        <div className="mx-auto max-w-6xl px-4 py-16 text-center lg:py-20">
+          <h2 className="font-heading text-3xl font-extrabold text-navy sm:text-5xl">
             What Milwaukee Homeowners Are Saying
-          </p>
-          <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
-            Reviews coming soon
           </h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-muted">
-            We are collecting customer feedback from Greater Milwaukee homeowners. This section is
-            a placeholder — we do not display invented ratings, review counts, or Google scores.
-            When published reviews are available, they will appear here.
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-muted">
+            Homeowners choose {site.name} for honest recommendations, professional service, and
+            noticeable improvements in their water quality. Customer reviews will appear here once
+            they are published — we do not display invented ratings or Google scores.
           </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {["Whole-home filtration", "Reverse osmosis", "Water softeners"].map((label) => (
-              <div
-                key={label}
-                className="rounded-2xl border border-dashed border-blue/40 bg-ice p-6"
-              >
+          <div className="mt-10 grid items-center gap-6 text-left md:grid-cols-[0.7fr_1fr_1fr]">
+            <div className="rounded-2xl border border-dashed border-blue/40 bg-ice p-8 text-center">
+              <p className="font-heading text-2xl font-extrabold uppercase tracking-wide text-navy">
+                Reviews
+              </p>
+              <p className="mt-2 text-lg font-bold text-navy">Coming soon</p>
+              <p className="mt-3 text-sm text-muted">
+                No star ratings or review counts are claimed at this time.
+              </p>
+            </div>
+            {["Whole-home filtration", "Reverse osmosis"].map((label) => (
+              <div key={label} className="rounded-2xl bg-slate-100 p-6">
                 <p className="text-xs font-bold uppercase tracking-wider text-blue">Placeholder</p>
                 <p className="mt-2 font-heading text-lg font-extrabold text-navy">{label}</p>
                 <p className="mt-2 text-sm leading-7 text-muted">
-                  Customer comments for {label.toLowerCase()} will be shown here after we have
-                  real, published reviews. No star ratings are claimed at this time.
+                  Published customer comments for {label.toLowerCase()} will be shown here. This
+                  card is a labeled placeholder, not a real review.
                 </p>
               </div>
             ))}
           </div>
+          <div className="mt-10">
+            <ButtonLink href="/contact">Get A Free Consultation</ButtonLink>
+          </div>
         </div>
       </section>
 
-      <section id="faq" className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">FAQ</p>
-          <h2 className="mt-3 max-w-3xl font-heading text-3xl font-extrabold text-navy sm:text-4xl">
+      <section id="faq" className="bg-ice">
+        <div className="mx-auto max-w-6xl px-4 py-16 text-center lg:py-20">
+          <SectionBadge>Frequently Asked • Answers To Your Questions</SectionBadge>
+          <h2 className="mx-auto mt-5 max-w-4xl font-heading text-3xl font-extrabold text-navy sm:text-5xl">
             Frequently Asked Questions About Our Water Filtration Services
           </h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-muted">
-            Get quick answers to common questions about whole-home filtration, reverse osmosis
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-muted">
+            Get quick answers to common questions about whole home filtration, reverse osmosis
             systems, water softeners, carbon filtration, well water treatment, city water
             treatment, installation, and choosing the best system for your home.
           </p>
-          <div className="mt-8">
+          <div className="mt-10 text-left">
             <FaqAccordion items={homeFaqs} />
           </div>
         </div>
       </section>
 
-      <section id="contact" className="bg-navy text-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-soft">Find Us</p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold">
-              Feel free to reach out anytime. We&apos;re here to help!
-            </h2>
-            <p className="mt-4 text-base leading-8 text-white/80">
-              Use the estimate form to request a free consultation. A phone number is coming soon —
-              we are not publishing a number or email on this site yet.
-            </p>
-            <dl className="mt-8 space-y-4 text-sm">
-              <div>
-                <dt className="font-heading font-bold">Phone</dt>
-                <dd className="text-white/75">{site.phoneLabel}</dd>
-              </div>
-              <div>
-                <dt className="font-heading font-bold">Address</dt>
-                <dd className="text-white/75">
-                  {site.address.full}
-                  <br />
-                  {site.officeNote}
-                </dd>
-              </div>
-              <div>
-                <dt className="font-heading font-bold">Service areas</dt>
-                <dd className="text-white/75">{site.counties.join(" • ")}</dd>
-              </div>
-            </dl>
-          </div>
-          <div className="rounded-2xl bg-white p-6 text-navy sm:p-8">
-            <p className="text-center text-lg font-semibold">
-              Request A <span className="underline decoration-accent">FREE</span>
-            </p>
-            <p className="mb-5 text-center font-heading text-2xl font-extrabold">
-              Consultation Today!
-            </p>
-            <EstimateForm id="home-contact-form" />
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </>
   );
 }

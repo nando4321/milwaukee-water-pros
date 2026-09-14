@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
-import { CtaPanel } from "@/components/CtaPanel";
+import { ContactSection } from "@/components/ContactSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { EstimateForm } from "@/components/EstimateForm";
 import { CheckIcon } from "@/components/Icons";
@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <p className="mt-4 text-sm text-muted">{site.address.full} • {site.phoneLabel}</p>
         </div>
       </section>
-      <CtaPanel />
+      <ContactSection />
     </>
   );
 }

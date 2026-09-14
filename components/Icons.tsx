@@ -32,8 +32,33 @@ export function CheckIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 export function DropIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path d="M12 3s6.5 7.4 6.5 12.2A6.5 6.5 0 1 1 5.5 15.2C5.5 10.4 12 3 12 3z" />
+    </svg>
+  );
+}
+
+export function ClipboardIcon({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <rect x="6" y="5" width="12" height="15" rx="2" />
+      <path d="M9 5V4h6v1M8 10h8M8 14h6" />
+    </svg>
+  );
+}
+
+export function WrenchIcon({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path d="M14.5 6.5a4 4 0 0 0-5.6 5.6L4 16.9 7.1 20l5-5a4 4 0 0 0 5.6-5.6L15 12l-3-3 2.5-2.5z" />
+    </svg>
+  );
+}
+
+export function MailIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2s7 8.2 7 13a7 7 0 1 1-14 0C5 10.2 12 2 12 2z" />
+      <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z" />
     </svg>
   );
 }

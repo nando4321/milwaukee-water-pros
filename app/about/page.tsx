@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { CtaPanel } from "@/components/CtaPanel";
+import { ContactSection } from "@/components/ContactSection";
 import { CheckIcon } from "@/components/Icons";
 import { site } from "@/lib/site";
 import { areas, areaPath } from "@/lib/areas";
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <CtaPanel />
+      <ContactSection />
     </>
   );
 }

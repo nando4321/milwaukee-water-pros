@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
-import { CtaPanel } from "@/components/CtaPanel";
+import { ContactSection } from "@/components/ContactSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { EstimateForm } from "@/components/EstimateForm";
 import { CheckIcon } from "@/components/Icons";
@@ -124,7 +124,7 @@ export default async function AreaDetailPage({ params }: Props) {
           </p>
         </div>
       </section>
-      <CtaPanel />
+      <ContactSection />
     </>
   );
 }

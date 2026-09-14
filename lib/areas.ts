@@ -3,6 +3,7 @@ export type ServiceArea = {
   name: string;
   navTitle: string;
   heroTitle: string;
+  image: string;
   intro: string;
   cities: string[];
   highlights: { title: string; body: string }[];
@@ -17,6 +18,7 @@ export const areas: ServiceArea[] = [
     name: "Milwaukee County",
     navTitle: "Milwaukee County, WI",
     heroTitle: "Water Filtration & Treatment Throughout Milwaukee County",
+    image: "/images/milwaukee.jpg",
     intro:
       "Milwaukee Water Pros provides dependable water filtration and treatment across Milwaukee County for homes, rentals, and light commercial properties. From helping customers compare filter types to matching systems with water concerns, we make the selection process clearer for property owners who want cleaner water without guesswork.",
     cities: [
@@ -89,6 +91,7 @@ export const areas: ServiceArea[] = [
     name: "Waukesha County",
     navTitle: "Waukesha County, WI",
     heroTitle: "Water Filtration & Treatment Across Waukesha County",
+    image: "/images/suburban.jpg",
     intro:
       "Milwaukee Water Pros serves Waukesha County homeowners who want clearer guidance on hard water, municipal taste and odor, and whole-home treatment. Our Brookfield office is in the county, and we install filtration, softening, and drinking-water systems for households from New Berlin to Oconomowoc.",
     cities: [
@@ -157,6 +160,7 @@ export const areas: ServiceArea[] = [
     name: "Ozaukee County",
     navTitle: "Ozaukee County, WI",
     heroTitle: "Water Filtration & Treatment in Ozaukee County",
+    image: "/images/lakefront.jpg",
     intro:
       "Milwaukee Water Pros provides water filtration and treatment for Ozaukee County homes — from Mequon and Cedarburg to Grafton and Port Washington. We help homeowners compare whole-home filtration, reverse osmosis, softeners, carbon systems, and well treatment based on how water is actually used.",
     cities: [
