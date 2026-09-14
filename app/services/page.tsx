@@ -32,7 +32,7 @@ export default function ServicesPage() {
             {services.map((service) => (
               <article key={service.slug} className="overflow-hidden rounded-2xl border border-blue/35 bg-white">
                 <Link href={servicePath(service.slug)} className="relative block h-52">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" sizes="(min-width: 1024px) 30vw, 100vw" />
+                  <Image src={service.image} alt={service.title} fill className="object-cover" sizes="(min-width: 1024px) 30vw, 100vw" loading="eager" />
                 </Link>
                 <div className="border-t-4 border-navy p-5">
                   <h2 className="font-heading text-xl font-extrabold text-navy">{service.title}</h2>

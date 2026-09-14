@@ -154,6 +154,7 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 30vw, 100vw"
+                    loading="eager"
                   />
                 </Link>
                 <div className="border-t-4 border-navy p-5">

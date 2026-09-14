@@ -32,7 +32,7 @@ export default function ServiceAreasPage() {
             {areas.map((area) => (
               <article key={area.slug} className="overflow-hidden rounded-2xl border border-blue/35 bg-white">
                 <Link href={areaPath(area.slug)} className="relative block h-52">
-                  <Image src={area.image} alt={area.name} fill className="object-cover" sizes="(min-width: 1024px) 30vw, 100vw" />
+                  <Image src={area.image} alt={area.name} fill className="object-cover" sizes="(min-width: 1024px) 30vw, 100vw" loading="eager" />
                 </Link>
                 <div className="border-t-4 border-navy p-5">
                   <h2 className="font-heading text-2xl font-extrabold text-navy">{area.name}</h2>
