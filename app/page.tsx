@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { EstimateForm } from "@/components/EstimateForm";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink } from "@/components/Button";
-import { CtaPanel } from "@/components/CtaPanel";
 import { CheckIcon, DropIcon } from "@/components/Icons";
 import { ServiceArt, serviceArtKind } from "@/components/ServiceArt";
 import { site } from "@/lib/site";
@@ -47,15 +47,22 @@ const whyUs = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(67,121,170,0.35),transparent_36%),radial-gradient(circle_at_90%_80%,rgba(194,66,13,0.22),transparent_32%)]" />
-        <div className="absolute -right-24 top-10 h-72 w-72 rounded-full border border-white/10" />
+      <section className="relative overflow-hidden text-white">
+        <Image
+          src="/images/hero-water.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy/80" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
           <div>
             <h1 className="font-heading text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.35rem]">
               #1 Top-Rated Water Filtration &amp; Treatment Experts In Milwaukee
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-white/85 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-8 text-white/90 sm:text-lg">
               {site.name} helps homeowners enjoy cleaner, better-tasting water with professional
               whole-home water filtration, reverse osmosis drinking water systems, water softeners,
               carbon filtration, well water treatment, and city water treatment solutions. Serving
@@ -84,16 +91,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="process" className="bg-ice">
+      <section id="process" className="bg-navy text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-[1fr_0.9fr] lg:py-20">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-soft">
               From Consultation to Completion in 3 Easy Steps
             </p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
+            <h2 className="mt-3 font-heading text-3xl font-extrabold sm:text-4xl">
               A Simple, No-Pressure Water Treatment Experience
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-8 text-muted">
+            <p className="mt-4 max-w-xl text-base leading-8 text-white/80">
               We make the process easy from start to finish. First, we review your water concerns,
               then recommend the right solution, and finally install your system with care so you
               can enjoy better water with confidence.
@@ -108,8 +115,8 @@ export default function HomePage() {
                     <p className="text-xs font-bold uppercase tracking-wider text-accent">
                       Step {index + 1}
                     </p>
-                    <h3 className="font-heading text-lg font-extrabold text-navy">{step.title}</h3>
-                    <p className="mt-1 text-sm leading-7 text-muted">{step.body}</p>
+                    <h3 className="font-heading text-lg font-extrabold">{step.title}</h3>
+                    <p className="mt-1 text-sm leading-7 text-white/75">{step.body}</p>
                   </div>
                 </div>
               ))}
@@ -118,8 +125,14 @@ export default function HomePage() {
               <ButtonLink href="/contact">Get A Free Consultation</ButtonLink>
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl shadow-lg">
-            <ServiceArt kind="process" label="Technician reviewing a home water treatment setup" className="h-full w-full" />
+          <div className="relative min-h-72 overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/process-water.jpg"
+              alt="Clear water representing professional treatment results"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
           </div>
         </div>
       </section>
@@ -144,7 +157,7 @@ export default function HomePage() {
             {services.map((service) => (
               <article
                 key={service.slug}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="group overflow-hidden rounded-2xl border border-blue/30 bg-ice shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <Link href={servicePath(service.slug)} className="block">
                   <ServiceArt
@@ -170,17 +183,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="bg-ice">
+      <section id="about" className="bg-navy text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-2xl border border-blue/40">
             <ServiceArt kind="city" label="Greater Milwaukee water treatment coverage" className="h-full w-full" />
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">About Us</p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy sm:text-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-soft">About Us</p>
+            <h2 className="mt-3 font-heading text-3xl font-extrabold sm:text-4xl">
               Milwaukee’s Trusted Water Filtration Specialists
             </h2>
-            <p className="mt-4 text-base leading-8 text-muted">
+            <p className="mt-4 text-base leading-8 text-white/80">
               {site.name} proudly serves Greater Milwaukee with professional water filtration and
               treatment solutions designed to improve the quality, taste, and performance of your
               home’s water. We help homeowners choose the right system based on their water source,
@@ -193,8 +206,8 @@ export default function HomePage() {
                 <li key={item.title} className="flex gap-3">
                   <CheckIcon className="mt-1 h-4 w-4 shrink-0 text-accent" />
                   <span>
-                    <strong className="font-heading text-navy">{item.title}</strong>
-                    <span className="block text-sm leading-7 text-muted">{item.body}</span>
+                    <strong className="font-heading text-white">{item.title}</strong>
+                    <span className="block text-sm leading-7 text-white/75">{item.body}</span>
                   </span>
                 </li>
               ))}
@@ -204,7 +217,7 @@ export default function HomePage() {
                 <Link
                   key={area.slug}
                   href={areaPath(area.slug)}
-                  className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:text-accent"
+                  className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-navy hover:bg-ice"
                 >
                   {area.name}
                 </Link>
@@ -228,14 +241,10 @@ export default function HomePage() {
             When published reviews are available, they will appear here.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              "Whole-home filtration",
-              "Reverse osmosis",
-              "Water softeners",
-            ].map((label) => (
+            {["Whole-home filtration", "Reverse osmosis", "Water softeners"].map((label) => (
               <div
                 key={label}
-                className="rounded-2xl border border-dashed border-slate-300 bg-ice p-6"
+                className="rounded-2xl border border-dashed border-blue/40 bg-ice p-6"
               >
                 <p className="text-xs font-bold uppercase tracking-wider text-blue">Placeholder</p>
                 <p className="mt-2 font-heading text-lg font-extrabold text-navy">{label}</p>
@@ -249,7 +258,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="faq" className="bg-ice">
+      <section id="faq" className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">FAQ</p>
           <h2 className="mt-3 max-w-3xl font-heading text-3xl font-extrabold text-navy sm:text-4xl">
@@ -266,49 +275,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="bg-white">
+      <section id="contact" className="bg-navy text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-20">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue">Find Us</p>
-            <h2 className="mt-3 font-heading text-3xl font-extrabold text-navy">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-soft">Find Us</p>
+            <h2 className="mt-3 font-heading text-3xl font-extrabold">
               Feel free to reach out anytime. We&apos;re here to help!
             </h2>
-            <p className="mt-4 text-base leading-8 text-muted">
+            <p className="mt-4 text-base leading-8 text-white/80">
               Use the estimate form to request a free consultation. A phone number is coming soon —
               we are not publishing a number or email on this site yet.
             </p>
             <dl className="mt-8 space-y-4 text-sm">
               <div>
-                <dt className="font-heading font-bold text-navy">Phone</dt>
-                <dd className="text-muted">{site.phoneLabel}</dd>
+                <dt className="font-heading font-bold">Phone</dt>
+                <dd className="text-white/75">{site.phoneLabel}</dd>
               </div>
               <div>
-                <dt className="font-heading font-bold text-navy">Address</dt>
-                <dd className="text-muted">
+                <dt className="font-heading font-bold">Address</dt>
+                <dd className="text-white/75">
                   {site.address.full}
                   <br />
                   {site.officeNote}
                 </dd>
               </div>
               <div>
-                <dt className="font-heading font-bold text-navy">Service areas</dt>
-                <dd className="text-muted">{site.counties.join(" • ")}</dd>
+                <dt className="font-heading font-bold">Service areas</dt>
+                <dd className="text-white/75">{site.counties.join(" • ")}</dd>
               </div>
             </dl>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-ice p-6 sm:p-8">
-            <p className="text-center text-lg font-semibold text-navy">
+          <div className="rounded-2xl bg-white p-6 text-navy sm:p-8">
+            <p className="text-center text-lg font-semibold">
               Request A <span className="underline decoration-accent">FREE</span>
             </p>
-            <p className="mb-5 text-center font-heading text-2xl font-extrabold text-navy">
+            <p className="mb-5 text-center font-heading text-2xl font-extrabold">
               Consultation Today!
             </p>
             <EstimateForm id="home-contact-form" />
           </div>
         </div>
       </section>
-
-      <CtaPanel />
     </>
   );
 }

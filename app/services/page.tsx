@@ -26,7 +26,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <article
               key={service.slug}
-              className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+              className="overflow-hidden rounded-2xl border border-blue/30 bg-ice shadow-sm"
             >
               <Link href={servicePath(service.slug)}>
                 <ServiceArt

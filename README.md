@@ -2,11 +2,11 @@
 
 Marketing website for **Milwaukee Water Pros** — water filtration and treatment for Greater Milwaukee (Milwaukee County, Waukesha County, and Ozaukee County).
 
-- Canonical URL: https://milwaukeewaterpros.com
+- Canonical URL: https://milwaukeewaterpros.co
 - Office: 205 Bishops Way #3, Brookfield, WI 53005
 - Phone: coming soon (not published on the site)
 
-The site is modeled on the structure and visual language of a professional water-treatment marketing page: hero + consultation form, a three-step process, a six-service grid, trust/about, a clearly labeled reviews placeholder, FAQ, and contact.
+The site is modeled on the structure and visual language of a professional water-treatment marketing page: darkened-image hero + consultation form, a three-step process, a six-service grid, trust/about, a clearly labeled reviews placeholder, FAQ, and contact.
 
 ## Pages
 
@@ -17,7 +17,9 @@ The site is modeled on the structure and visual language of a professional water
 - `/contact` — Estimate form (demo)
 - `/contact/thank-you` — Form confirmation
 - `/privacy` — Privacy policy
-- `/robots.txt` and `/sitemap.xml` — generated from `app/robots.ts` and `app/sitemap.ts` with `metadataBase` https://milwaukeewaterpros.com
+- `/robots.txt` and `/sitemap.xml` — generated from `app/robots.ts` and `app/sitemap.ts` with `metadataBase` https://milwaukeewaterpros.co
+
+`www.milwaukeewaterpros.co` redirects to the apex domain in `next.config.ts`.
 
 ## Run locally
 
@@ -39,6 +41,6 @@ npm start
 
 ## Deploy
 
-This is a standard Next.js App Router app. Connect the GitHub repository to Vercel (or run `npx vercel`) and set the production domain to milwaukeewaterpros.com when DNS is ready. No environment variables are required for the demo form.
+This is a standard Next.js App Router app. Connect the GitHub repository to Vercel (or run `npx vercel`) and attach **milwaukeewaterpros.co** (and www, which redirects to apex). No environment variables are required for the demo form.
 
 The consultation form currently redirects to a thank-you page and does not send email. Wire `app/actions.ts` to your provider when you are ready to receive leads.

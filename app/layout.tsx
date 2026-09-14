@@ -1,4 +1,4 @@
-import { Plus_Jakarta_Sans, Nunito_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
 import { Header } from "@/components/Header";
@@ -6,15 +6,9 @@ import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
-const heading = Plus_Jakarta_Sans({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const body = Nunito_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-plus-jakarta",
   display: "swap",
 });
 
@@ -58,10 +52,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${heading.variable} ${body.variable} h-full scroll-smooth`}
-    >
+    <html lang="en" className={`${plusJakarta.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col bg-white text-ink antialiased">
         <JsonLd />
         <a

@@ -1,7 +1,7 @@
 export const site = {
   name: "Milwaukee Water Pros",
   shortName: "MWP",
-  url: "https://milwaukeewaterpros.com",
+  url: "https://milwaukeewaterpros.co",
   tagline: "Cleaner water for Greater Milwaukee homes",
   description:
     "Professional whole-home water filtration, reverse osmosis drinking water, water softeners, carbon filtration, well water treatment, and city water treatment for Milwaukee, Waukesha, and Ozaukee counties.",

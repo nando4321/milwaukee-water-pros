@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: `How ${site.name} handles information submitted through milwaukeewaterpros.com.`,
+  description: `How ${site.name} handles information submitted through milwaukeewaterpros.co.`,
   alternates: { canonical: "/privacy" },
 };
 

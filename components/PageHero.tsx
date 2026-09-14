@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function PageHero({
   eyebrow,
   title,
@@ -8,8 +10,16 @@ export function PageHero({
   body: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(67,121,170,0.45),transparent_42%)]" />
+    <section className="relative overflow-hidden text-white">
+      <Image
+        src="/images/hero-water.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-navy/80" />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-20">
         {eyebrow ? (
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/70">{eyebrow}</p>
