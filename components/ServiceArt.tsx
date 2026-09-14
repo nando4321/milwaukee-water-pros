@@ -9,11 +9,11 @@ type ArtKind =
   | "hero";
 
 const palettes: Record<ArtKind, { from: string; to: string }> = {
-  "whole-home": { from: "#1b3a68", to: "#4379AA" },
-  ro: { from: "#0e7490", to: "#67e8f9" },
-  well: { from: "#3f6212", to: "#a3e635" },
-  softener: { from: "#1e3a5f", to: "#93c5fd" },
-  carbon: { from: "#1f2937", to: "#9ca3af" },
+  "whole-home": { from: "#111E46", to: "#4379AA" },
+  ro: { from: "#0b1430", to: "#4379AA" },
+  well: { from: "#111E46", to: "#5b8fbc" },
+  softener: { from: "#111E46", to: "#4379AA" },
+  carbon: { from: "#0b1430", to: "#4379AA" },
   city: { from: "#111E46", to: "#C2420D" },
   process: { from: "#111E46", to: "#4379AA" },
   hero: { from: "#0b1430", to: "#4379AA" },
